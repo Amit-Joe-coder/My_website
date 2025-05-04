@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     try:
-        return render_template('index(1).html')
+        return render_template('index.html')
     except Exception as e:
         app.logger.error(f"Error rendering template: {e}")
         return "Internal Server Error", 500
