@@ -1,46 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WiKi's Portfolio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-</head>
-
-<body>
-    <header class="fade-in">
-        <h1>Welcome to Amit Joe's World</h1>
-        <p>Software Engineer | YouTuber</p>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Blog</a>
-        </nav>
-    </header>
-    <main>
-        <section id="about" class="fade-in delay-300">
-            <h2>About Me</h2>
-            <p>
-                Hi, I'm <strong>Amit Joe</strong>, a passionate <strong>Software Engineer</strong>, content creator. I
-                blend <strong>technology, fitness, and storytelling</strong> to craft digital experiences that inspire
-                and inform.
-            </p>
-            <p>
-                By day, I engineer scalable web solutions and user-friendly interfaces; by night, I share tech
-                tutorials, motivational content, and travel experiences through my <strong>YouTube channel</strong>.
-                Whether it's coding elegant designs, creating impactful videos, or competing in the ring, I bring
-                creativity, discipline, and energy into everything I do.
-            </p>
-            <p>
-                Let's connect and build something amazing together.
-            </p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 WiKi</p>
-    </footer>
-</body>
-
-</html>
+{% extends "base.html" %}
+{% block title %}Home | WiKi{% endblock %}
+{% block content %}
+<section class="fade-in delay-300">
+    <p>I'm a software engineer and content creator.</p>
+</section>
+<main>
+    <section>
+        <h2>About Me</h2>
+        <p>Hi, I'm Amit. I blend tech, fitness, and creativity to inspire and innovate.</p>
+    </section>
+</main>
+{% endblock %}
