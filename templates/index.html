@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% block title %}Home | WiKi{% endblock %}
 {% block content %}
-<section class="fade-in delay-300">
-    <p>I'm a software engineer and content creator.</p>
+<section class="fade-in delay-300" style="text-align: center; padding: 2rem 1rem;">
+    <h1>Hi, I’m Amit Joe 👋</h1>
+    <p class="subheading">Data Analyst • YouTuber • Fitness Coach</p>
 </section>
+
 <main>
     <section id="about" class="fade-in delay-300">
         <h2>About Me</h2>
@@ -17,9 +19,39 @@
             coding elegant designs, creating impactful videos, or competing in the ring, I bring creativity, discipline,
             and energy into everything I do.
         </p>
+    </section>
+    <section class="card fade-in delay-300">
+        <h3>What I Do</h3>
+        <ul>
+            <li>💻 Full-Stack Web Development</li>
+            <li>📊 Data Analysis & Visualization</li>
+            <li>🎥 YouTube Vlogs & Tech Tutorials</li>
+        </ul>
+    </section>
+    <!-- YouTube Section -->
+    <section class="card fade-in delay-300">
+        <h3>Watch My Latest Vlog</h3>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px;">
+            <iframe src="https://www.youtube.com/embed/jEun2s2Palk" title="Latest Short" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px;"></iframe>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="card fade-in delay-300">
+        <h3>What People Say</h3>
+        <blockquote>
+            “Amit’s energy, creativity, and skills are just unmatched. A true multi-talented creator!”<br />
+            <span style="color: #888;">– A Happy Collaborator</span>
+        </blockquote>
+    </section>
+    <section>
         <p>
-            Let's collaborate and build something meaningful that leaves a lasting impact. Feel free to reach out via my <a href="mailto:joe.amit@yahoo.com">email</a> or check out my latest projects below!
-          </p>
+            Let's collaborate and build something meaningful that leaves a lasting impact. Feel free to reach out via my
+            <a href="mailto:joe.amit@yahoo.com">email</a> or check out my latest projects below!
+        </p>
     </section>
 </main>
 {% endblock %}
