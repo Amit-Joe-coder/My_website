@@ -229,3 +229,41 @@ h1, h2, h3 {
 #whatsappButton:hover::after {
   opacity: 1;
 }
+
+#whatsapp-chat {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.chat-icon {
+  background-color: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60px;
+  font-size: 28px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.chat-popup {
+  display: none;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  width: 250px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  font-size: 14px;
+}
+
+.chat-popup p {
+  margin-bottom: 10px;
+}
+
