@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}WiKi's Site{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <header class="fade-in">
+    <h1>Welcome to WiKi's World</h1>
+    <p>Software Engineer | YouTuber</p>
+    <nav>
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('portfolio') }}">Portfolio</a>
+      <a href="#blog">Blog</a>
+    </nav>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <footer>
+    <p>&copy; 2025 WiKi</p>
+  </footer>
+</body>
+</html>
