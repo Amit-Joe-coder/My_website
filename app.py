@@ -10,6 +10,10 @@ def home():
     except Exception as e:
         app.logger.error(f"Error rendering template: {e}")
         return "Internal Server Error", 500
+    
+@app.route("/portfolio")
+def portfolio():
+    return render_template("portfolio.html")
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)
