@@ -414,3 +414,10 @@ nav a:hover::after {
     padding: 1rem 0;
   }
 }
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;  /* Makes it bigger */
+  font-weight: 700;  /* Bold for emphasis */
+  color: #1d4ed8;    /* A professional blue tone */
+  margin-bottom: 10px;
+}
