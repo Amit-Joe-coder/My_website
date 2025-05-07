@@ -26,7 +26,35 @@
 
     <footer>
         <p>&copy; 2025 WiKi</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/technomadwiki?igsh=cXdweWFqbTAwM2Y0" target="_blank">Instagram</a> |
+            <a href="https://www.instagram.com/technomadwiki?igsh=cXdweWFqbTAwM2Y0" target="_blank">X (Twitter)</a> |
+            <a href="https://www.instagram.com/technomadwiki?igsh=cXdweWFqbTAwM2Y0" target="_blank">Facebook</a> |
+            <a href="https://youtube.com/@wikimeerutia_vlogs?si=-f4ROeJlf83TOeN9" target="_blank">YouTube</a> |
+            <a href="https://www.linkedin.com/in/amit-joe-703174223?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " target="_blank">Linkedin</a>
+        </div>
     </footer>
+
+    <button id="backToTop" title="Back to top">↑</button>
+    <script>
+        const topBtn = document.getElementById("backToTop");
+        window.onscroll = () => {
+            topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+        };
+        topBtn.onclick = () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+    </script>
+    <script>
+        const fadeEls = document.querySelectorAll('.fade-in');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        });
+        fadeEls.forEach(el => fadeObserver.observe(el));
+    </script>
+
 </body>
 
 </html>
