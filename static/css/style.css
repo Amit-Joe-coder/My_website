@@ -1,3 +1,27 @@
+/* Color Scheme */
+:root {
+  --primary-color: #1d4ed8; /* Blue */
+  --secondary-color: #ff9e2c; /* Warm orange */
+  --background-color: #f7f7f7; /* Light gray */
+  --text-color: #333; /* Dark gray */
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+}
+
+a {
+  color: var(--secondary-color);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 /* Base Reset */
 * {
     margin: 0;
@@ -6,11 +30,9 @@
   }
   
   body {
-    font-family: 'Inter', 'Segoe UI', sans-serif;
-    background-color: #f9fafb;
-    color: #1f2937;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    padding: 1rem;
+    color: #333;
   }
   
   /* Header */
@@ -95,15 +117,46 @@
   opacity: 0;
 }
 
-/* Button hover */
+/* Button Styles */
 .btn {
-  transition: transform 0.2s ease, background-color 0.3s;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
 }
+
 .btn:hover {
+  background-color: var(--secondary-color);
   transform: scale(1.05);
-  background-color: #1d4ed8;
 }
+
 /* Delay class for staggered animations */
 .delay-300 {
   animation-delay: 0.3s;
+}
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  color: #1d4ed8; /* Light blue for headers */
+}
+
+/* Card Style */
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  color: #1d4ed8;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #666;
 }
