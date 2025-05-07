@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400;500&display=swap"
         rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
 </head>
 
@@ -27,12 +29,12 @@
     <footer>
         <p>&copy; 2025 WiKi</p>
         <div class="social-links">
-            <a href="https://www.instagram.com/technomadwiki?igsh=cXdweWFqbTAwM2Y0" target="_blank">Instagram</a> |
-            <a href="https://x.com/TechNomadWiki?t=FMRh35CICAlgXKdnd2aKxA&s=09" target="_blank">X (Twitter)</a> |
-            <a href="https://www.instagram.com/technomadwiki?igsh=cXdweWFqbTAwM2Y0" target="_blank">Facebook</a> |
-            <a href="https://youtube.com/@wikimeerutia_vlogs?si=-f4ROeJlf83TOeN9" target="_blank">YouTube</a> |
+            <a href="https://www.instagram.com/technomadwiki?igsh=cXdweWFqbTAwM2Y0" target="_blank"><i class="fab fa-instagram"></i>Instagram</a> |
+            <a href="https://x.com/TechNomadWiki?t=FMRh35CICAlgXKdnd2aKxA&s=09" target="_blank"><i class="fab fa-twitter"></i>X (Twitter)</a> |
+            <a href="https://www.instagram.com/technomadwiki?igsh=cXdweWFqbTAwM2Y0" target="_blank"><i class="fab fa-facebook"></i>Facebook</a> |
+            <a href="https://youtube.com/@wikimeerutia_vlogs?si=-f4ROeJlf83TOeN9" target="_blank"><i class="fab fa-facebook"></i>YouTube</a> |
             <a href="https://www.linkedin.com/in/amit-joe-703174223?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "
-                target="_blank">Linkedin</a>
+                target="_blank"><i class="fab fa-linkedin"></i>Linkedin</a>
         </div>
     </footer>
 
@@ -58,7 +60,23 @@
     <a href="https://wa.me/+919548948480" target="_blank" id="whatsappButton" title="Chat on WhatsApp">
         💬
     </a>
-
+    <div id="whatsapp-chat">
+        <div class="chat-icon" onclick="toggleChat()">
+          <i class="fab fa-whatsapp"></i>
+        </div>
+        <div class="chat-popup" id="chatPopup">
+          <p>Hi! 👋 Need help? Chat with me on WhatsApp.</p>
+          <a href="https://wa.me/+919548948480" target="_blank" class="btn">Start Chat</a>
+        </div>
+      </div>
+      
+      <script>
+        function toggleChat() {
+          const popup = document.getElementById("chatPopup");
+          popup.style.display = popup.style.display === "block" ? "none" : "block";
+        }
+      </script>
+      
 
 </body>
 
