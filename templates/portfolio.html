@@ -3,11 +3,42 @@
 {% block content %}
 <main class="fade-in delay-300">
   <section>
-    <h2>My Projects</h2>
-    <ul>
-      <li><strong>Portfolio Website</strong> – This site itself, built with Flask + HTML/CSS</li>
-      <li><strong>Blog Platform (Coming Soon)</strong></li>
-    </ul>
+    <h2 class="text-3xl font-bold text-center">🚀 My Projects & Learning Journey</h2>
+
+    <!-- Excel Dashboards -->
+    <div class="card">
+      <h3>📊 Excel Dashboards for Sales & Analytics</h3>
+      <img src="{{ url_for('static', filename='images/protein_sale.png') }}" alt="Excel Dashboard" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
+      <p>I’ve built data dashboards for protein sales using Excel and Power Query. These dashboards show trends, growth metrics, and SKU-level breakdowns—shared publicly on 
+        <a href="https://www.linkedin.com/in/amit-joe-703174223"" target="_blank">LinkedIn</a> to demonstrate real-time analytics skills.</p>
+    </div>
+
+    <!-- Automation Sundays -->
+    <div class="card">
+      <h3>🤖 Automation Sundays with n8n</h3>
+      <img src="{{ url_for('static', filename='images/dhanBot.png') }}" alt="n8n Workflow" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
+      <p>Every Sunday, I work on automating tasks using <strong>n8n</strong>—from scraping data to posting Telegram alerts. These no-code workflows help me learn integrations between APIs and services like Google Sheets, Telegram, and Airtable.</p>
+    </div>
+
+    <!-- Telegram Bot -->
+    <div class="card">
+      <h3>💬 Telegram Bot for Task Automation</h3>
+      <img src="{{ url_for('static', filename='images/airtable_bot.png') }}" alt="Telegram Bot Screenshot" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
+      <p>This bot receives commands in chat and automates responses, triggers n8n workflows, or updates data entries. Built using Python’s Telebot framework and deployed using Render for always-on support.</p>
+    </div>
+
+    <!-- Airtable Rating System -->
+    <div class="card">
+      <h3>⭐ Airtable Automatic Rating System</h3>
+      <img src="{{ url_for('static', filename='images/airtable_automate.png') }}" alt="Airtable Screenshot" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
+      <p>Users give feedback via form, and n8n processes this input into Airtable where it’s categorized and auto-rated. This project taught me about webhook triggers, filters, and using Airtable as a lightweight backend.</p>
+    </div>
+
+    <!-- Blog -->
+    <div class="card" style="opacity: 0.5;">
+      <p>I’m building a blogging section where I’ll post about data analytics, automation experiments, coding tutorials, and productivity hacks. Stay tuned!</p>
+    </div>
+
   </section>
 </main>
 {% endblock %}
