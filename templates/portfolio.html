@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block title %}Portfolio | WiKi{% endblock %}
 {% block content %}
-<main class="fade-in delay-300">
+<main data-aos="fade-up">
   <section>
     <h2 class="text-3xl font-bold text-center">🚀 My Projects & Learning Journey</h2>
 
     <!-- Excel Dashboards -->
-    <div class="card fade-in">
+    <div class="card" data-aos="fade-left" data-aos-delay="300">
       <h3>📊 Excel Dashboards for Sales & Analytics</h3>
       <img src="{{ url_for('static', filename='images/protein_sale.png') }}" alt="Excel Dashboard"
         style="width: 300px; max-width: 100%; border-radius: 8px; margin: 10px auto; display: block;">
@@ -28,7 +28,7 @@
     </div>
 
     <!-- Telegram Bot -->
-    <div class="card fade-in">
+    <div class="card" data-aos="fade-left" data-aos-delay="300">
       <h3>💬 Telegram Bot for Task Automation</h3>
       <img src="{{ url_for('static', filename='images/airtable_bot.png') }}" alt="Telegram Bot Screenshot"
         style="width: 300px; max-width: 100%; border-radius: 8px; margin: 10px auto; display: block;">
@@ -37,7 +37,7 @@
     </div>
 
     <!-- Airtable Rating System -->
-    <div class="card fade-in">
+    <div class="card" data-aos="zoom-in">
       <h3>⭐ Airtable Automatic Rating System</h3>
       <img src="{{ url_for('static', filename='images/airtable_automate.png') }}" alt="Airtable Screenshot"
         style="width: 300px; max-width: 100%; border-radius: 8px; margin: 10px auto; display: block;">
@@ -47,7 +47,7 @@
 
 
     <!-- ✅ Paste your JP Morgan card here -->
-    <div class="card fade-in">
+    <div class="card" data-aos="fade-left" data-aos-delay="300">
       <h3>🎓 JP Morgan Chase & Co. Virtual Experience</h3>
       <img src="{{ url_for('static', filename='images/jp_1.jpg') }}" alt="JP Morgan Certificate"
         style="width: 300px; max-width: 100%; border-radius: 8px; margin: 10px auto; display: block;">
@@ -60,7 +60,7 @@
     </div>
 
     <!-- Blog -->
-    <div class="card fade-in" style="opacity: 0.5;">
+    <div class="card" data-aos="zoom-in" style="opacity: 0.5;">
       <p>I’m building a blogging section where I’ll post about data analytics, automation experiments, coding tutorials,
         and productivity hacks. Stay tuned!</p>
     </div>
