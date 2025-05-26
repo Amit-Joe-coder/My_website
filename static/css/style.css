@@ -427,3 +427,19 @@ h1 {
   background-color: black;
   place-items: center;
 }
+
+
+.home-page .home-title {
+  display: grid;
+  height: 100vh;
+  background-color: black;
+  place-items: center;
+}
+
+.home-page h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  margin-bottom: 10px;
+}
