@@ -421,3 +421,9 @@ h1 {
   color: #1d4ed8;    /* A professional blue tone */
   margin-bottom: 10px;
 }
+.home-title {
+  display: grid;
+  height: 100vh;
+  background-color: black;
+  place-items: center;
+}
