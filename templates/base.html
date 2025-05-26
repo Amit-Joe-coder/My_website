@@ -2,33 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{% block title %}WiKi's Site{% endblock %}</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/title-animation.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/title-animation.css') }}" />
 </head>
-
 <body class="{% block body_class %}{% endblock %}">
 
   <!-- Header -->
-  <header class="fade-in delay-300">
-    <h1>Tech Enthusiast, Innovator & Storyteller</h1>
+  <header class="fade-in delay-300" role="banner">
+    <h1>Tech Enthusiast, Innovator &amp; Storyteller</h1>
     <p>Software Engineer • YouTuber • Data Analyst • Content Creator</p>
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Primary Navigation">
       <div class="nav-container">
-        <div class="logo">WiKi</div>
-        <div class="hamburger" id="hamburger">&#9776;</div>
-        <ul class="nav-links" id="navLinks">
+        <div class="logo" aria-label="Website Logo">WiKi</div>
+        <button 
+          class="hamburger" 
+          id="hamburger" 
+          aria-expanded="false" 
+          aria-controls="navLinks" 
+          aria-label="Toggle navigation menu"
+          >
+          &#9776;
+        </button>
+        <ul class="nav-links" id="navLinks" hidden>
           <li><a href="{{ url_for('home') }}">Home</a></li>
           <li><a href="{{ url_for('portfolio') }}">Portfolio</a></li>
           <li><a href="{{ url_for('blog') }}">Blog</a></li>
@@ -38,55 +45,83 @@
   </header>
 
   <!-- Main Content -->
-  <main class="container">
+  <main class="container" role="main">
     {% block content %}{% endblock %}
   </main>
 
   <!-- Footer -->
-  <footer>
+  <footer role="contentinfo">
     <p>&copy; 2025 WiKi. All rights reserved.</p>
-    <div class="social-links">
-      <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-      <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <div class="social-links" aria-label="Social Media Links">
+      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
     </div>
   </footer>
 
   <!-- Floating Buttons -->
-  <button id="backToTop" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+  <button id="backToTop" title="Back to Top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
-  <a href="https://wa.me/your-number" target="_blank" id="whatsappButton">
+  <a href="https://wa.me/your-number" target="_blank" rel="noopener noreferrer" id="whatsappButton" aria-label="WhatsApp Chat">
     <i class="fab fa-whatsapp"></i>
   </a>
 
   <!-- WhatsApp Chat Popup (Optional) -->
-  <div id="whatsapp-chat">
-    <div class="chat-icon"><i class="fab fa-whatsapp"></i></div>
+  <div id="whatsapp-chat" role="dialog" aria-modal="false" aria-labelledby="whatsapp-chat-title" hidden>
+    <div class="chat-icon" tabindex="0" aria-label="Open WhatsApp chat"><i class="fab fa-whatsapp"></i></div>
     <div class="chat-popup">
-      <p>Hello 👋<br>How can I help you today?</p>
-      <a href="https://wa.me/your-number" class="btn">Start Chat</a>
+      <p id="whatsapp-chat-title">Hello 👋<br>How can I help you today?</p>
+      <a href="https://wa.me/your-number" class="btn" target="_blank" rel="noopener noreferrer">Start Chat</a>
     </div>
   </div>
 
   <!-- Scripts -->
   <script>
-    // Hamburger menu toggle
-    document.getElementById("hamburger").addEventListener("click", function () {
-      document.getElementById("navLinks").classList.toggle("show");
-    });
+    document.addEventListener("DOMContentLoaded", () => {
+      // Hamburger menu toggle with aria-expanded update
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+      
+      hamburger.addEventListener("click", () => {
+        const expanded = hamburger.getAttribute("aria-expanded") === "true" || false;
+        hamburger.setAttribute("aria-expanded", !expanded);
+        if (navLinks.hasAttribute("hidden")) {
+          navLinks.removeAttribute("hidden");
+          navLinks.classList.add("show");
+        } else {
+          navLinks.setAttribute("hidden", "");
+          navLinks.classList.remove("show");
+        }
+      });
 
-    // Scroll-to-top functionality
-    const topBtn = document.getElementById("backToTop");
-    window.onscroll = () => {
-      topBtn.style.display = window.scrollY > 300 ? "block" : "none";
-    };
-    topBtn.onclick = () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
+      // Scroll-to-top functionality
+      const topBtn = document.getElementById("backToTop");
+      window.addEventListener("scroll", () => {
+        topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+      });
+      topBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
 
-    // WhatsApp chat popup toggle
-    document.querySelector(".chat-icon").addEventListener("click", () => {
-      document.querySelector(".chat-popup").classList.toggle("show");
+      // WhatsApp chat popup toggle
+      const chatIcon = document.querySelector(".chat-icon");
+      const chatPopup = document.querySelector(".chat-popup");
+      if (chatIcon && chatPopup) {
+        chatIcon.addEventListener("click", () => {
+          chatPopup.classList.toggle("show");
+          // toggle aria-modal for accessibility
+          const whatsappChat = document.getElementById("whatsapp-chat");
+          if (chatPopup.classList.contains("show")) {
+            whatsappChat.removeAttribute("hidden");
+            whatsappChat.setAttribute("aria-modal", "true");
+          } else {
+            whatsappChat.setAttribute("hidden", "");
+            whatsappChat.setAttribute("aria-modal", "false");
+          }
+        });
+      }
     });
   </script>
 
