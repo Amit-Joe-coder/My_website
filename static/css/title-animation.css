@@ -43,10 +43,9 @@
   }
 }
 
-body {
+body.home-title {
   display: grid;
   height: 100vh;
-
   background-color: black;
   place-items: center;
 }
