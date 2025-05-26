@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,24 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/title-animation.css') }}">
 </head>
-
 <body>
-    {% block header %}
-<header class="fade-in">
-    <h1>Tech Enthusiast, Innovator, and Storyteller — Welcome to My World!</h1>
-    <p>Software Engineer | YouTuber | Data Analyst | Content Creator</p>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="hamburger" id="hamburger">&#9776;</div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('portfolio') }}">Portfolio</a></li>
-                <li><a href="{{ url_for('blog') }}">Blog</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
-{% endblock %}
+
+    {# Header block, filled in child templates like index.html #}
+    {% block header %}{% endblock %}
 
     {% block content %}{% endblock %}
 
@@ -43,8 +28,7 @@
                     class="fab fa-facebook"></i>Facebook</a> |
             <a href="https://youtube.com/@wikimeerutia_vlogs?si=-f4ROeJlf83TOeN9" target="_blank"><i
                     class="fab fa-youtube"></i>YouTube</a> |
-            <a href="https://www.linkedin.com/in/amit-joe-703174223?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "
-                target="_blank"><i class="fab fa-linkedin"></i>Linkedin</a>
+            <a href="https://www.linkedin.com/in/amit-joe-703174223" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
         </div>
     </footer>
 
@@ -90,8 +74,5 @@
         });
     </script>
 
-
-
 </body>
-
 </html>
