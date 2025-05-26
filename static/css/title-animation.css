@@ -43,12 +43,16 @@
   }
 }
 
-body.home-title {
+.hero-animation {
   display: grid;
-  height: 100vh;
-  background-color: black;
   place-items: center;
+  background-color: black;
+  padding: 4rem 1rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 1200px;
 }
+
 
 h1 {
   color: white;
