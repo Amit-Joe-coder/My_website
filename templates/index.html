@@ -2,23 +2,6 @@
 
 {% block title %}Home | WiKi{% endblock %}
 
-{% block header %}
-<header class="fade-in">
-    <h1>Tech Enthusiast, Innovator, and Storyteller — Welcome to My World!</h1>
-    <p>Software Engineer | YouTuber | Data Analyst | Content Creator</p>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="hamburger" id="hamburger">&#9776;</div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('portfolio') }}">Portfolio</a></li>
-                <li><a href="{{ url_for('blog') }}">Blog</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
-{% endblock %}
-
 {% block content %}
 <section class="home-title">
   <h1>
@@ -32,41 +15,33 @@
 <p class="subheading">Data Analyst • YouTuber • Fitness Coach</p>
 
 <main>
-    <section id="about" class="fade-in delay-300">
-        <h2>About Me</h2>
-        <p>Hi, I'm <strong>Amit Joe</strong>, a passionate <strong>Software Engineer</strong>. I blend
-            <strong>technology, fitness, and storytelling</strong> to craft digital experiences that inspire and inform.
-        </p>
-        <p>
-            By day, I engineer scalable web solutions and user-friendly interfaces; by night, I share tech tutorials,
-            motivational content, and travel experiences through my <strong>YouTube channel</strong>. Whether it's
-            coding elegant designs, creating impactful videos, or competing in the ring, I bring creativity, discipline,
-            and energy into everything I do.
-        </p>
-    </section>
+  <section id="about" class="fade-in delay-300">
+    <h2>About Me</h2>
+    <p>Hi, I'm <strong>Amit Joe</strong>, a passionate <strong>Software Engineer</strong>. I blend
+      <strong>technology, fitness, and storytelling</strong> to craft digital experiences that inspire and inform.</p>
+    <p>By day, I engineer scalable web solutions; by night, I share tech tutorials, motivational content, and travel
+      experiences through my <strong>YouTube channel</strong>.</p>
+  </section>
 
-    <section class="card fade-in delay-300">
-        <h3>What I Do</h3>
-        <ul>
-            <li>💻 Full-Stack Web Development</li>
-            <li>📊 Data Analysis & Visualization</li>
-            <li>🎥 YouTube Vlogs & Tech Tutorials</li>
-        </ul>
-    </section>
+  <section class="card fade-in delay-300">
+    <h3>What I Do</h3>
+    <ul>
+      <li>💻 Full-Stack Web Development</li>
+      <li>📊 Data Analysis & Visualization</li>
+      <li>🎥 YouTube Vlogs & Tech Tutorials</li>
+    </ul>
+  </section>
 
-    <section class="card fade-in delay-300">
-        <h3>What People Say</h3>
-        <blockquote>
-            “Amit’s energy, creativity, and skills are just unmatched. A true multi-talented creator!”<br />
-            <span style="color: #888;">– A Happy Collaborator</span>
-        </blockquote>
-    </section>
+  <section class="card fade-in delay-300">
+    <h3>What People Say</h3>
+    <blockquote>“Amit’s energy, creativity, and skills are just unmatched. A true multi-talented creator!”<br />
+      <span style="color: #888;">– A Happy Collaborator</span>
+    </blockquote>
+  </section>
 
-    <section>
-        <p>
-            Let's collaborate and build something meaningful that leaves a lasting impact. Feel free to reach out via my
-            <a href="mailto:joe.amit@yahoo.com">email</a> or check out my latest projects below!
-        </p>
-    </section>
+  <section>
+    <p>Let's collaborate and build something meaningful! Reach out via <a href="mailto:joe.amit@yahoo.com">email</a> or
+      explore my latest projects below.</p>
+  </section>
 </main>
 {% endblock %}
