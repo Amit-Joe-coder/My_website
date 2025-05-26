@@ -1,26 +1,24 @@
-{% block body_class %}home-page{% endblock %}
-
 {% extends "base.html" %}
 
 {% block title %}Home | WiKi{% endblock %}
 
+{% block body_class %}home-page{% endblock %}
+
 {% block content %}
-<section class="home-title">
+<section class="home-title fade-in">
   <h1>
     <span class="word">Hi,</span>
     <span class="word">I’m</span>
     <span class="word">WiKi</span>
     <span class="word superscript">🔥</span>
   </h1>
+  <p class="subheading">Data Analyst • YouTuber • Fitness Coach</p>
 </section>
 
-<p class="subheading">Data Analyst • YouTuber • Fitness Coach</p>
-
 <main>
-  <section id="about" class="fade-in delay-300">
+  <section id="about" class="fade-in delay-300 card">
     <h2>About Me</h2>
-    <p>Hi, I'm <strong>Amit Joe</strong>, a passionate <strong>Software Engineer</strong>.</p>
-    <p>I engineer web solutions, share tutorials, and compete as a national-level kickboxer.</p>
+    <p>I'm <strong>Amit Joe</strong>, a passionate <strong>Software Engineer</strong> who engineers web solutions, shares tutorials, and competes as a national-level kickboxer.</p>
   </section>
 
   <section class="card fade-in delay-300">
@@ -34,14 +32,18 @@
 
   <section class="card fade-in delay-300">
     <h3>What People Say</h3>
-    <blockquote>“Amit’s energy, creativity, and skills are just unmatched. A true multi-talented creator!”<br />
-      <span style="color: #888;">– A Happy Collaborator</span>
+    <blockquote>
+      “Amit’s energy, creativity, and skills are just unmatched. A true multi-talented creator!”
+      <br />
+      <span class="quote-author">– A Happy Collaborator</span>
     </blockquote>
   </section>
 
-  <section>
-    <p>Let's collaborate and build something meaningful! Reach out via <a href="mailto:joe.amit@yahoo.com">email</a> or
-      explore my latest projects below.</p>
+  <section class="fade-in delay-300">
+    <p>
+      Let's collaborate and build something meaningful! Reach out via 
+      <a href="mailto:joe.amit@yahoo.com">email</a> or explore my latest projects below.
+    </p>
   </section>
 </main>
 {% endblock %}
