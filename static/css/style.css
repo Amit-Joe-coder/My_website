@@ -7,6 +7,8 @@
   --header-bg: #0f172a;
   --card-bg: #ffffff;
   --hover-scale: 1.05;
+  --fade-duration: 0.6s;
+  --fade-delay: 0.3s;
 }
 
 /* ========== Base Reset ========== */
@@ -59,7 +61,7 @@ nav {
   justify-content: center;
   gap: 30px;
   margin-top: 10px;
-  animation: slideDown 0.6s ease-out;
+  animation: slideDown var(--fade-duration) ease-out;
 }
 
 nav a {
@@ -187,28 +189,40 @@ button:hover, .btn:hover {
 
 /* ========== Animations ========== */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideDown {
-  from { transform: translateY(-40px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
+/* Use fadeIn animation with delay variable */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  animation-name: fadeIn;
+  animation-duration: var(--fade-duration);
+  animation-fill-mode: forwards;
+  animation-delay: var(--delay, 0s);
 }
 
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+/* Helper delay classes */
 .delay-300 {
-  animation-delay: 0.3s;
+  --delay: 0.3s;
 }
 
 /* ========== Floating Buttons ========== */
@@ -225,6 +239,7 @@ button:hover, .btn:hover {
   cursor: pointer;
   display: none;
   z-index: 1000;
+  transition: background-color 0.3s ease;
 }
 
 #backToTop:hover {
@@ -246,13 +261,13 @@ button:hover, .btn:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   transition: background-color 0.3s, transform 0.2s;
+  position: fixed;
+  cursor: pointer;
+  /* Needed for tooltip positioning */
+  position: fixed;
 }
 
-#whatsappButton:hover {
-  background-color: #1ebe5d;
-  transform: scale(1.1);
-}
-
+/* Tooltip for WhatsApp button */
 #whatsappButton::after {
   content: 'Chat on WhatsApp';
   position: absolute;
@@ -267,6 +282,12 @@ button:hover, .btn:hover {
   white-space: nowrap;
   pointer-events: none;
   font-size: 12px;
+}
+
+/* Show tooltip on hover */
+#whatsappButton:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.1);
 }
 
 #whatsappButton:hover::after {
