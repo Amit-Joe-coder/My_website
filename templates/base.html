@@ -7,14 +7,14 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/title-animation.css') }}">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/title-animation.css') }}">
 </head>
 
 <body>
 
-  <!-- HEADER SECTION (ONLY HERE) -->
+  <!-- Header (static, not a block!) -->
   <header class="fade-in">
     <h1>Tech Enthusiast, Innovator, and Storyteller — Welcome to My World!</h1>
     <p>Software Engineer | YouTuber | Data Analyst | Content Creator</p>
@@ -30,26 +30,23 @@
     </nav>
   </header>
 
-  <!-- MAIN CONTENT BLOCK -->
+  <!-- MAIN PAGE CONTENT -->
   {% block content %}{% endblock %}
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 WiKi</p>
     <div class="social-links">
-      <a href="https://www.instagram.com/technomadwiki?igsh=cXdweWFqbTAwM2Y0" target="_blank"><i class="fab fa-instagram"></i>Instagram</a> |
-      <a href="https://x.com/TechNomadWiki?t=FMRh35CICAlgXKdnd2aKxA&s=09" target="_blank"><i class="fab fa-twitter"></i>X (Twitter)</a> |
-      <a href="https://www.facebook.com/share/1CLQ7S3WDq/" target="_blank"><i class="fab fa-facebook"></i>Facebook</a> |
-      <a href="https://youtube.com/@wikimeerutia_vlogs?si=-f4ROeJlf83TOeN9" target="_blank"><i class="fab fa-youtube"></i>YouTube</a> |
-      <a href="https://www.linkedin.com/in/amit-joe-703174223" target="_blank"><i class="fab fa-linkedin"></i>Linkedin</a>
+      <!-- Your social icons here -->
     </div>
   </footer>
 
-  <!-- Back to Top Button -->
-  <button id="backToTop" title="Back to top">↑</button>
-
-  <!-- JavaScript -->
+  <!-- Scripts -->
   <script>
+    document.getElementById("hamburger").addEventListener("click", function () {
+      document.getElementById("navLinks").classList.toggle("show");
+    });
+
     const topBtn = document.getElementById("backToTop");
     window.onscroll = () => {
       topBtn.style.display = window.scrollY > 300 ? "block" : "none";
@@ -57,40 +54,6 @@
     topBtn.onclick = () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
-  </script>
-
-  <script>
-    const fadeEls = document.querySelectorAll('.fade-in');
-    const fadeObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    });
-    fadeEls.forEach(el => fadeObserver.observe(el));
-  </script>
-
-  <!-- WhatsApp Chat -->
-  <div id="whatsapp-chat">
-    <div class="chat-icon" onclick="toggleChat()">
-      <i class="fab fa-whatsapp"></i>
-    </div>
-    <div class="chat-popup" id="chatPopup">
-      <p>Hi! 👋 Need help? Chat with me on WhatsApp.</p>
-      <a href="https://wa.me/+919548948480" target="_blank" class="btn">Start Chat</a>
-    </div>
-  </div>
-
-  <script>
-    function toggleChat() {
-      const popup = document.getElementById("chatPopup");
-      popup.style.display = popup.style.display === "block" ? "none" : "block";
-    }
-  </script>
-
-  <script>
-    document.getElementById("hamburger").addEventListener("click", function () {
-      document.getElementById("navLinks").classList.toggle("show");
-    });
   </script>
 
 </body>
