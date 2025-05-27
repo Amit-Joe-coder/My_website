@@ -1,3 +1,19 @@
+header {
+  background-color: #222 !important;
+  color: white !important;
+  padding: 1rem 2rem !important;
+  display: block !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 1000 !important;
+}
+header h1, header p {
+  margin: 0;
+  color: white !important;
+}
+
+
+
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600");
 
 /* Variables */
