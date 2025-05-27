@@ -484,3 +484,13 @@ blockquote {
   margin-top: 0.5rem;
   text-shadow: 0 0 5px rgba(255, 215, 0, 0.5), 0 0 8px rgba(255, 215, 0, 0.3);
 }
+
+.banner-header h1 {
+  font-family: 'Playfair Display', serif; /* Or your previously used font */
+  font-weight: 600;
+  font-size: 4rem; /* Adjust size as needed */
+  color: #fff; /* Or your preferred color */
+  text-align: center;
+  margin: 0 auto 1rem;
+  line-height: 1.1;
+}
