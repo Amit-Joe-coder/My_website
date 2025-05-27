@@ -64,24 +64,26 @@
 </footer>
 
 
-    <!-- Floating Buttons -->
-    <button id="backToTop" title="Back to Top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <!-- Floating Action Buttons -->
+<button id="backToTop" title="Back to Top" aria-label="Back to top" class="fab-btn top-btn">
+    <i class="fas fa-arrow-up"></i>
+</button>
 
-    <a href="https://wa.me/your-number" target="_blank" rel="noopener noreferrer" id="whatsappButton"
-        aria-label="WhatsApp Chat">
+<a href="https://wa.me/your-number" target="_blank" rel="noopener noreferrer" id="whatsappButton" aria-label="WhatsApp Chat" class="fab-btn whatsapp-btn">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- WhatsApp Chat Popup -->
+<div id="whatsapp-chat" role="dialog" aria-modal="false" aria-labelledby="whatsapp-chat-title" hidden>
+    <div class="chat-icon" tabindex="0" aria-label="Open WhatsApp chat">
         <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- WhatsApp Chat Popup (Optional) -->
-    <div id="whatsapp-chat" role="dialog" aria-modal="false" aria-labelledby="whatsapp-chat-title" hidden>
-        <div class="chat-icon" tabindex="0" aria-label="Open WhatsApp chat"><i class="fab fa-whatsapp"></i></div>
-        <div class="chat-popup">
-            <p id="whatsapp-chat-title">Hello 👋<br>How can I help you today?</p>
-            <a href="https://wa.me/your-number" class="btn" target="_blank" rel="noopener noreferrer">Start Chat</a>
-        </div>
     </div>
+    <div class="chat-popup">
+        <p id="whatsapp-chat-title">Hello 👋<br>How can I help you today?</p>
+        <a href="https://wa.me/your-number" class="chat-btn" target="_blank" rel="noopener noreferrer">Start Chat</a>
+    </div>
+</div>
+
 
     <!-- Scripts -->
     <script>
