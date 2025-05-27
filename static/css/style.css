@@ -244,3 +244,59 @@ blockquote {
     --size: 6rem;
   }
 }
+
+
+/* Base Navbar Styles (desktop view) */
+.navbar .hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar .nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Mobile view (max-width: 768px) */
+@media (max-width: 768px) {
+  .navbar .hamburger {
+    display: block;
+  }
+
+  .navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #222;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    z-index: 999;
+  }
+
+  .navbar .nav-links.show {
+    display: flex;
+  }
+
+  .navbar .nav-links li {
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar .nav-links li:last-child {
+    margin-bottom: 0;
+  }
+}
